@@ -43,18 +43,22 @@ project/
 ```
 ---
 
-## Code Components
+### Code Components
 
-1. **`AgentState`**: Tracks the paper's processing state (raw text, summary, critique, refined output, and errors).
-2. **`extract_text_from_pdf`**: Extracts text from a PDF file.
-3. **`init_openai`**: Initializes the OpenAI language model.
-4. **`create_summary_agent`**: Generates research summaries from text.
-5. **`create_critique_agent`**: Critiques summaries by comparing them with related research.
-6. **`create_refinement_agent`**: Refines summaries based on critiques.
-7. **`create_vector_store`**: Creates a FAISS index for semantic search from text data.
-8. **`create_research_workflow`**: Orchestrates the workflow using LangGraph.
-9. **`process_pdf`**: Handles the full lifecycle of PDF processing (summarization, critique, refinement).
-10. **`main`**: Entry point to execute the script.
+#### `agents/`
+- **`summary_agent.py`**: Contains `create_summary_agent` for generating research summaries.
+- **`critique_agent.py`**: Implements `create_critique_agent` for critiquing summaries against related research.
+- **`refinement_agent.py`**: Includes `create_refinement_agent` for refining content.
+
+#### `utils/`
+- **`pdf_utils.py`**: Manages PDF text extraction with `extract_text_from_pdf`.
+- **`openai_utils.py`**: Handles OpenAI model initialization with `init_openai`.
+
+#### `orchestration/`
+- **`workflow.py`**: Orchestrates the workflow using LangGraph with `create_research_workflow`.
+
+#### `main.py`
+Entry point to execute the entire process.
 
 ---
 
